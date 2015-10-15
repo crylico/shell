@@ -1,0 +1,62 @@
+#!/bin/bash
+
+alias less=$PAGER 
+alias zless=$PAGER 
+
+alias l="ls -laFbh"
+alias cdc="clear;date;cal"
+
+alias grep="grep --color=always"
+alias egrep="egrep --color=always"
+alias fgrep="fgrep --color=always"
+
+alias vi=vim
+alias vimc="vim -u NONE -N"
+
+if hash reattach-to-user-namespace 2>/dev/null; then
+    alias vim="reattach-to-user-namespace vim"
+    alias mvim="reattach-to-user-namespace mvim"
+fi
+
+# Push and pop directories on directory stack
+alias pu='pushd'
+alias po='popd'
+
+# Basic directory operations
+alias ...='cd ../..'
+alias -- -='cd -'
+
+# Super user
+alias _='sudo'
+alias please='sudo'
+
+alias ga='git add'
+alias gaa='git add -A'
+alias gp='git push'
+alias gl="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+alias gs='git status'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gm='git commit -m'
+alias gma='git commit -am'
+alias gb='git branch'
+alias gc='git checkout'
+alias gra='git remote add'
+alias grr='git remote rm'
+alias gpu='git pull'
+alias gcl='git clone'
+
+alias gne='geeknote edit --note'
+alias gns='geeknote show'
+alias gnc='geeknote create'
+
+alias mv="mv -i"
+alias cp="cp -i"
+alias rm="rm -i"
+
+alias oe="open -a Emacs ."
+
+# iOS - Hey will, this is called commenting
+alias fuckxcode="rm -rf $HOME/Library/Developer/Xcode/DerivedData"
+alias fl='fastlane'
+alias lane='fastlane'

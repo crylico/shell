@@ -1,5 +1,5 @@
-
-export ZSH=/Users/kyle/.oh-my-zsh
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -45,14 +45,14 @@ ZSH_THEME="dieter"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git, osx, vi-mode, web-search, common-aliases)
+
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="~/.cabal/bin:/usr/local/sbin:~/.cabal/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/3.4/bin:~/.cabal/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:~/.cabal/bin:/usr/local/sbin:/Library/Frameworks/Python.framework/Versions/3.4/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
-
-source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -79,101 +79,35 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-if which ruby >/dev/null && which gem >/dev/null; then
-    PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+MISC=~/.misc/
+
+# Load External BASH
+if [ -f $MISC/.aliases ]; then
+    source $MISC/.aliases
 fi
 
-lclone() {
-    git clone https://git.universe25.com/${1}.git
-}
+# Load External BASH
+if [ -f $MISC/.functions ]; then
+    source $MISC/.functions
+fi
 
-gclone() {
-    git clone https://github.com/${1}.git
-}
+# Load External BASH
+if [ -f $MISC/.exports ]; then
+    source $MISC/.exports
+fi
 
-iosadd() {
-    ios devices:add "${1}"=${2}
-}
+if [ -f `brew --prefix`/etc/profile.d/z.sh ]; then
+    . `brew --prefix`/etc/profile.d/z.sh
+fi
 
-iosmanage() {
-    ios profiles:manage:devices --type distribution
-}
+export PATH=~/npm-global/bin:$PATH
+export PATH=~/.bin:$PATH
 
-arduino-lib() {
-    rm ~/Documents/Arduino/libraries
-    ln -s ${PWD} ~/Documents/Arduino/libraries
-}
+bindkey -v
 
-alias o.='open .'
+[ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
 
-alias ga='git add'
-alias gaa='git add -A'
-alias gp='git push'
-alias gl="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
-alias gs='git status'
-alias gd='git diff'
-alias gdc='git diff --cached'
-alias gm='git commit -m'
-alias gma='git commit -am'
-alias gb='git branch'
-alias gc='git checkout'
-alias gra='git remote add'
-alias grr='git remote rm'
-alias gpu='git pull'
-alias gcl='git clone'
-alias grc='git reset --hard'
-alias gst='git stash'
-alias gsd='git stash drop'
-alias gcp='git cherry-pick'
-
-alias fl='fastlane'
-alias lane='fastlane'
-
-function plex() {
-    ssh -L 32400:192.168.11.80:32400 dedi
-}
-
-alias fuckxcode="rm -rf $HOME/Library/Developer/Xcode/DerivedData"
-alias update_gems="gem update `gem list | cut -d ' ' -f 1`"
-
-set -o vi
-
-export PATH=$PATH:/usr/local/CrossPack-AVR/bin:$HOME/Library/Python/2.7/bin
-
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Documents/Development
-source $HOME/Library/Python/2.7/bin/virtualenvwrapper.sh
-
-export DEVKITPRO=/opt/devkitpro
-export DEVKITPPC=$DEVKITPRO/devkitPPC
-export DEVKITARM=$DEVKITPRO/devkitARM
-
-export WIILOAD=tcp:192.168.11.116
-
-export PILOT_USERNAME="apple-locorobo@kylelevin.com"
-export PILOT_APP_IDENTIFIER="co.locorobo.ios"
-
-# Extract things. Thanks to urukrama, Ubuntuforums.org
-extract () {
-     if [ -f $1 ] ; then
-         case $1 in
-             *.tar.bz2)   tar xjf $1;;
-             *.tar.gz)    tar xzf $1;;
-             *.bz2)       bunzip2 $1;;
-             *.rar)       unrar x $1;;
-             *.gz)        gunzip $1;;
-             *.tar)       tar xf $1;;
-             *.tbz2)      tar xjf $1;;
-             *.tgz)       tar xzf $1;;
-             *.zip)       unzip $1;;
-             *.Z)         uncompress $1;;
-             *.7z)        7z x $1;;
-             *)           echo "'$1' cannot be extracted via extract()" ;;
-         esac
-     else
-         echo "'$1' is not a valid file"
-     fi
-}
+command -v archey >/dev/null 2>&1 && archey
 
 function powerline_precmd() {
 PS1="$(~/.powerline-shell.py $? --shell zsh 2> /dev/null)"
@@ -181,18 +115,13 @@ PS1="$(~/.powerline-shell.py $? --shell zsh 2> /dev/null)"
 
 function install_powerline_precmd() {
 for s in "${precmd_functions[@]}"; do
-if [ "$s" = "powerline_precmd" ]; then
-  return
-fi
+    if [ "$s" = "powerline_precmd" ]; then
+        return
+    fi
 done
 precmd_functions+=(powerline_precmd)
 }
 
 if [ "$TERM" != "linux" ]; then
-install_powerline_precmd
+    install_powerline_precmd
 fi
-
-. `brew --prefix`/etc/profile.d/z.sh
-
-ARDUINO_DIR=/Applications/Arduino.app/Contents/Java
-AVR_TOOLS_DIR=/usr/local/CrossPack-AVR/bin
