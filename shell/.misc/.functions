@@ -56,6 +56,10 @@ iosmanage() {
     ios profiles:manage:devices --type distribution
 }
 
+cy() {
+    ssh -t ios "cycript -p $1"
+}
+
 # Arduino IDE
 arduino-lib() {
     rm ~/Documents/Arduino/libraries

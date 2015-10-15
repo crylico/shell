@@ -55,6 +55,8 @@ alias cp="cp -i"
 alias rm="rm -i"
 
 alias oe="open -a Emacs ."
+alias o="open ."
+alias o.="open ."
 
 # iOS - Hey will, this is called commenting
 alias fuckxcode="rm -rf $HOME/Library/Developer/Xcode/DerivedData"
