@@ -193,6 +193,8 @@ layers configuration."
   (define-key evil-visual-state-map "j" 'evil-next-visual-line)
   (define-key evil-visual-state-map "k" 'evil-previous-visual-line)
   )
+  
+  (add-to-list 'auto-mode-alist '("\\.ino\\'" . c++-mode))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
