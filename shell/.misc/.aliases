@@ -58,7 +58,10 @@ alias oe="open -a Emacs ."
 alias o="open ."
 alias o.="open ."
 
-alias ...="../.."
+alias cd..="cd .."
+alias cd...="../.."
+
+alias ta="tmux attach"
 
 # iOS - Hey will, this is called commenting
 alias fuckxcode="rm -rf $HOME/Library/Developer/Xcode/DerivedData"
