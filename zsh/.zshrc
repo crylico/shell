@@ -125,3 +125,6 @@ precmd_functions+=(powerline_precmd)
 if [ "$TERM" != "linux" ]; then
     install_powerline_precmd
 fi
+
+# virtualenvwrapper
+source ${HOME}/Library/Python/2.7/bin/virtualenvwrapper.sh
