@@ -32,7 +32,6 @@
      semantic
 
      emacs-lisp
-     bgscript
      javascript
      python
      c-c++

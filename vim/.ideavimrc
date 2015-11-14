@@ -1,0 +1,19 @@
+nnoremap ,<space> :noh<cr>
+let mapleader = ","
+
+set relativenumber
+set number
+
+nnoremap ,f :find<cr>
+" New verticle window split
+nnoremap ,w <C-w>v<C-w>l
+nnoremap ,h <C-w>s<C-w>k
+
+" Moving around windows
+nnoremap <C-H> <C-w>h
+nnoremap <C-J> <C-w>j
+nnoremap <C-K> <C-w>k
+nnoremap <C-L> <C-w>l
+
+set visualbell
+set noerrorbells

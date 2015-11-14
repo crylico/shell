@@ -128,3 +128,6 @@ fi
 
 # virtualenvwrapper
 source ${HOME}/Library/Python/2.7/bin/virtualenvwrapper.sh
+
+export NVM_DIR="/Users/kyle/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
