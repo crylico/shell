@@ -31,3 +31,5 @@ if which ruby >/dev/null && which gem >/dev/null; then
 fi
 
 export PATH="/usr/local/CrossPack-AVR/bin:$PATH"
+
+export PILOT_USERNAME=apple@locorobo.co
