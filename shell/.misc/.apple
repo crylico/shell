@@ -1,5 +1,0 @@
-# Fastlane
-##########
-
-export FASTLANE_USERNAME="apple-locorobo@kylelevin.com"
-export PILOT_APP_IDENTIFIER="co.locorobo.ios"
