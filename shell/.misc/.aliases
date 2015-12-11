@@ -46,6 +46,10 @@ alias grr='git remote rm'
 alias gpu='git pull'
 alias gcl='git clone'
 
+alias gst='git stash'
+alias gsp='git stash pop'
+alias gsd='git stash drop'
+
 alias gne='geeknote edit --note'
 alias gns='geeknote show'
 alias gnc='geeknote create'
