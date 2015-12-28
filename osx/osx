@@ -286,3 +286,6 @@ echo "Done. Note that some of these changes require a logout/restart to take eff
 
 # Install homebrew
 ./brew
+
+# Git
+git config —global push.followTags true
