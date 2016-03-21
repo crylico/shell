@@ -13,7 +13,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "olympia "
+sudo scutil --set ComputerName "olympia"
 sudo scutil --set HostName "oylmpia"
 sudo scutil --set LocalHostName "olympia"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "olympia"
@@ -58,7 +58,7 @@ sudo systemsetup -setrestartfreeze on
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
 # Disable Notification Center and remove the menu bar icon
-# launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
+launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
@@ -284,8 +284,5 @@ for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
 
-# Install homebrew
-./brew
-
 # Git
-git config —global push.followTags true
+git config --global push.followTags true
