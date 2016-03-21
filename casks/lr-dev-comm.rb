@@ -7,5 +7,5 @@ cask 'lr-dev-comm' do
   homepage 'https://app.locorobo.co'
   license :mit
 
-  app 'LocoRobo Communicator.app'
+  app 'LocoRobo Communicator.app', target: 'LocoRobo Dev Communicator.app'
 end
