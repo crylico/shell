@@ -17,7 +17,7 @@ endfunction
 
 Plug 'Shougo/vimproc', { 'do': function('BuildVimProc') }
 
-Plug 'rainbow_parentheses.vim'
+Plug 'kien/rainbow_parentheses.vim'
 Plug 'molokai'
 Plug 'Shougo/neocomplete'
 Plug 'Shougo/neosnippet'
@@ -101,8 +101,9 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
-set number  
+set number
 set relativenumber
+
 " set undofile
 set grepprg=grep\ -nH\ $*
 set autoindent

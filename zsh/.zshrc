@@ -49,36 +49,6 @@ plugins=(git, osx, vi-mode, web-search, common-aliases)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-export PATH="~/.cabal/bin:/usr/local/sbin:~/.cabal/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/3.4/bin:~/.cabal/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:~/.cabal/bin:/usr/local/sbin:/Library/Frameworks/Python.framework/Versions/3.4/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 MISC=~/.misc/
 
 # Load External BASH
@@ -100,34 +70,15 @@ if [ -f `brew --prefix`/etc/profile.d/z.sh ]; then
     . `brew --prefix`/etc/profile.d/z.sh
 fi
 
-export PATH=~/npm-global/bin:$PATH
-export PATH=~/.bin:$PATH
-
-bindkey -v
-
-[ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
-
-command -v archey >/dev/null 2>&1 && archey
-
-function powerline_precmd() {
-PS1="$(~/.powerline-shell.py $? --shell zsh 2> /dev/null)"
-}
-
-function install_powerline_precmd() {
-for s in "${precmd_functions[@]}"; do
-    if [ "$s" = "powerline_precmd" ]; then
-        return
-    fi
-done
-precmd_functions+=(powerline_precmd)
-}
-
-if [ "$TERM" != "linux" ]; then
-    install_powerline_precmd
+if [[ -f `which rbenv` ]]; then
+    eval "$(rbenv init -)"
 fi
 
-# virtualenvwrapper
-source ${HOME}/Library/Python/2.7/bin/virtualenvwrapper.sh
+if [[ -f `which pyenv` ]]; then
+    eval "$(pyenv init -)"
+fi
 
 export NVM_DIR="/Users/kyle/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+set -o vi
