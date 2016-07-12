@@ -14,3 +14,7 @@ export LC_CTYPE=$LANG
 #
 # export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
+
+# devkitARM
+export DEVKITPRO=/opt/devkitpro
+export DEVKITARM=$DEVKITPRO/devkitARM
