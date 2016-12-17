@@ -10,8 +10,6 @@ alias grep="grep --color=always"
 alias egrep="egrep --color=always"
 alias fgrep="fgrep --color=always"
 
-alias vi=mvim
-
 if hash reattach-to-user-namespace 2>/dev/null; then
     alias vim="reattach-to-user-namespace vim"
     alias mvim="reattach-to-user-namespace mvim"
@@ -82,3 +80,6 @@ alias spp='spotify prev'
 alias sps='spotify toggle shuffle'
 alias spre='spotify toggle repeat'
 alias spv='spotify vol'
+
+alias bb='buck build'
+alias bi='buck install'

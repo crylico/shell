@@ -62,6 +62,10 @@ cy() {
 
 # Arduino IDE
 arduino-lib() {
-    rm ~/Documents/Arduino/libraries
+    rm -rf ~/Documents/Arduino/libraries
     ln -s ${PWD} ~/Documents/Arduino/libraries
+}
+
+load_nvm() {
+    . ~/.nvm/nvm.sh
 }

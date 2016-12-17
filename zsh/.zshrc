@@ -70,24 +70,27 @@ if [ -f `brew --prefix`/etc/profile.d/z.sh ]; then
     . `brew --prefix`/etc/profile.d/z.sh
 fi
 
-if [[ -f `which rbenv` ]]; then
-    eval "$(rbenv init -)"
-fi
+#if [[ -f `which rbenv` ]]; then
+#    eval "$(rbenv init -)"
+#fi
 
-if [[ -f `which pyenv` ]]; then
-    eval "$(pyenv init -)"
-fi
+#if [[ -f `which pyenv` ]]; then
+#    eval "$(pyenv init -)"
+#    eval "$(pyenv-virtualenv init -)"
+#fi
 
-if [[ -f `which swiftenv` ]]; then
-    eval "$(swiftenv init -)"
-fi
+#if [[ -f `which swiftenv` ]]; then
+#    eval "$(swiftenv init -)"
+#fi
 
-if [[ -f `which xcenv` ]]; then
-    eval "$(xcenv init -)"
-fi
+#if [[ -f `which xcenv` ]]; then
+#    eval "$(xcenv init -)"
+#fi
 
 
-export NVM_DIR="/Users/kyle/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+#export NVM_DIR="/Users/kyle/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 set -o vi
+
+PATH=$PATH:/usr/local/CrossPack-AVR/bin
