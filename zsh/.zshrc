@@ -66,8 +66,10 @@ if [ -f $MISC/.exports ]; then
     source $MISC/.exports
 fi
 
-if [ -f `brew --prefix`/etc/profile.d/z.sh ]; then
-    . `brew --prefix`/etc/profile.d/z.sh
+if [[ -f `which brew` ]]; then 
+    if [ -f `brew --prefix`/etc/profile.d/z.sh ]; then
+        . `brew --prefix`/etc/profile.d/z.sh
+    fi
 fi
 
 #if [[ -f `which rbenv` ]]; then
