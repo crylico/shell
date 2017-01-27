@@ -74,10 +74,10 @@ fi
 #    eval "$(rbenv init -)"
 #fi
 
-#if [[ -f `which pyenv` ]]; then
+if [[ -f `which pyenv` ]]; then
 #    eval "$(pyenv init -)"
 #    eval "$(pyenv-virtualenv init -)"
-#fi
+fi
 
 #if [[ -f `which swiftenv` ]]; then
 #    eval "$(swiftenv init -)"
@@ -94,3 +94,7 @@ fi
 set -o vi
 
 PATH=$PATH:/usr/local/CrossPack-AVR/bin
+
+export DEVKITPRO=/opt/devkitpro
+export DEVKITARM=/opt/devkitpro/devkitARM
+export PATH=$PATH:/opt/devkitpro/devkitARM/bin

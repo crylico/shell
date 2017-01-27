@@ -3,6 +3,8 @@
 alias less=$PAGER 
 alias zless=$PAGER 
 
+alias emacs='emacs -nw'
+
 alias l="ls -laFbh"
 alias cdc="clear;date;cal"
 
