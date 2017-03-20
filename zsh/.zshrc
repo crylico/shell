@@ -37,6 +37,11 @@ if [ -f $MISC/.exports ]; then
     source $MISC/.exports
 fi
 
+# Load External Working BASH
+if [ -f $MISC/.working ]; then
+    source $MISC/.working
+fi
+
 if [[ -f `which brew` ]]; then 
     if [ -f `brew --prefix`/etc/profile.d/z.sh ]; then
         . `brew --prefix`/etc/profile.d/z.sh
@@ -53,4 +58,4 @@ if [[ -f `which pyenv` ]]; then
 fi
 
 set -o vi
-export DOCKER_FORWARD_NAME=lcrb
+
