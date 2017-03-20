@@ -16,7 +16,7 @@ ZSH_THEME="dieter"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git, osx, vi-mode)
+plugins=(git, osx, vi-mode, web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -53,3 +53,4 @@ if [[ -f `which pyenv` ]]; then
 fi
 
 set -o vi
+export DOCKER_FORWARD_NAME=lcrb
