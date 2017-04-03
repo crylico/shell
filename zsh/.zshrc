@@ -48,14 +48,4 @@ if [[ -f `which brew` ]]; then
     fi
 fi
 
-if [[ -f `which rbenv` ]]; then
-    eval "$(rbenv init -)"
-fi
-
-if [[ -f `which pyenv` ]]; then
-    eval "$(pyenv init -)"
-    eval "$(pyenv-virtualenv init -)"
-fi
-
 set -o vi
-
