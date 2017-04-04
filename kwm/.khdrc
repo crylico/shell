@@ -1,0 +1,34 @@
+# enable kwm compatibility mode
+khd kwm on
+
+# move focused window to screen
+cmd + alt - y   :    kwmc window -m display 2
+cmd + alt - h   :    kwmc window -m display 1
+cmd + alt - n   :    kwmc window -m display 0
+
+# focus screen
+cmd + ctrl - y            :    kwmc display -f 2
+cmd + ctrl - h            :    kwmc display -f 1
+cmd + ctrl - n            :    kwmc display -f 0
+
+# window navigation
+cmd + ctrl - k : kwmc window -f north
+cmd + ctrl - h : kwmc window -f west
+cmd + ctrl - j : kwmc window -f south
+cmd + ctrl - l : kwmc window -f east
+
+# move window between screens
+cmd + ctrl + shift - j : kwmc window -m display prev
+cmd + ctrl + shift - k : kwmc window -m display next
+
+# toggle fullscreen
+cmd + ctrl - f : kwmc window -z fullscreen
+
+cmd + ctrl - 1 : kwmc window -m space 1
+cmd + ctrl - 2 : kwmc window -m space 2
+cmd + ctrl - 3 : kwmc window -m space 3
+cmd + ctrl - 4 : kwmc window -m space 4
+cmd + ctrl - 5 : kwmc window -m space 5
+cmd + ctrl - 6 : kwmc window -m space 6
+cmd + ctrl - 7 : kwmc window -m space 7
+cmd + ctrl - 8 : kwmc window -m space 8
