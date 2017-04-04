@@ -7,9 +7,9 @@ cmd + alt - h   :    kwmc window -m display 1
 cmd + alt - n   :    kwmc window -m display 0
 
 # focus screen
-cmd + ctrl - y            :    kwmc display -f 2
-cmd + ctrl - h            :    kwmc display -f 1
-cmd + ctrl - n            :    kwmc display -f 0
+cmd + ctrl + shift - y            :    kwmc display -f 2
+cmd + ctrl + shift - h            :    kwmc display -f 1
+cmd + ctrl + shift - n            :    kwmc display -f 0
 
 # window navigation
 cmd + ctrl - k : kwmc window -f north
