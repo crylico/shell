@@ -85,3 +85,6 @@ alias spv='spotify vol'
 
 alias bb='buck build'
 alias bi='buck install'
+
+alias localip="ipconfig getifaddr en0"
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
