@@ -69,3 +69,15 @@ arduino-lib() {
 load_nvm() {
     . ~/.nvm/nvm.sh
 }
+
+load_pyenv() {
+    eval "$(pyenv init -)"
+}
+
+a() {
+    if [ "$#" -ne 1 ]; then
+        atom .
+    else
+        atom $1
+    fi
+}

@@ -1,6 +1,9 @@
 # enable kwm compatibility mode
 khd kwm on
 
+# reset
+cmd + ctrl + shift - q   :    brew services restart kwm
+
 # move focused window to screen
 cmd + alt - y   :    kwmc window -m display 2
 cmd + alt - h   :    kwmc window -m display 1
