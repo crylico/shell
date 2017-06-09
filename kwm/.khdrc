@@ -2,7 +2,9 @@
 khd kwm on
 
 # reset
-cmd + ctrl + shift - q   :    brew services restart kwm
+cmd + ctrl + shift - q   :    brew services stop kwm
+cmd + ctrl + shift - r   :    brew services restart kwm
+cmd + ctrl + shift - u   :    brew services start kwm
 
 # move focused window to screen
 cmd + alt - y   :    kwmc window -m display 2
@@ -35,3 +37,10 @@ cmd + ctrl - 5 : kwmc window -m space 5
 cmd + ctrl - 6 : kwmc window -m space 6
 cmd + ctrl - 7 : kwmc window -m space 7
 cmd + ctrl - 8 : kwmc window -m space 8
+
+cmd + ctrl + shift - o : itunes play
+cmd + ctrl + shift - p : itunes pause
+cmd + ctrl + shift - w : itunes vol up
+cmd + ctrl + shift - s : itunes vol down
+cmd + ctrl + shift - a : itunes prev
+cmd + ctrl + shift - d : itunes next

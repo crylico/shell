@@ -18,3 +18,5 @@ export GREP_COLOR='1;32'
 # devkitARM
 export DEVKITPRO=/opt/devkitpro
 export DEVKITARM=$DEVKITPRO/devkitARM
+
+export PATH=$HOME/.bin:$PATH
