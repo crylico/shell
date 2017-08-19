@@ -37,7 +37,36 @@ function! NumberToggle()
     endif
 endfunc
 
+function! HeaderToggle() " bang for overwrite when saving vimrc
+    let file_path = expand("%")
+    let file_name = expand("%<")
+    let extension = split(file_path, '\.')[-1] " '\.' is how you really split on dot
+    let err_msg = "There is no file "
+
+    if extension == "c" || extension == "m"
+        let next_file = join([file_name, ".h"], "")
+
+        if filereadable(next_file)
+        :e %<.h
+        else
+            echo join([err_msg, next_file], "")
+        endif
+    elseif extension == "h"
+        let c_file = join([file_name, ".c"], "")
+        let m_file = join([file_name, ".m"], "")
+
+        if filereadable(c_file)
+            :e %<.c
+        elseif filereadable(m_file)
+            :e %<.m
+        else
+            echo join([err_msg, next_file], "")
+        endif
+    endif
+endfunction
+
 nnoremap <leader>rn :call NumberToggle()<cr>
+nnoremap <leader>h :call HeaderToggle()<cr>
 
 inoremap jj <esc>
 inoremap kk <esc>
