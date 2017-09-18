@@ -40,7 +40,7 @@ function take() {
 
 # Git
 lclone() {
-    git clone https://git.universe25.com/${1}.git
+    git clone ssh://git@git.datagno.me:50000/${1}.git
 }
 
 gclone() {
