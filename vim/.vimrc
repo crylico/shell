@@ -75,6 +75,7 @@ nnoremap <leader>d :Dox<cr>
 
 inoremap jj <esc>
 inoremap kk <esc>
+inoremap <leader>a <C-Space>
 
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>s <C-w>s<C-w>k
