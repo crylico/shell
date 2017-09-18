@@ -19,4 +19,6 @@ export GREP_COLOR='1;32'
 export DEVKITPRO=/opt/devkitpro
 export DEVKITARM=$DEVKITPRO/devkitARM
 
-export PATH=$HOME/.bin:$PATH
+export PYENV_ROOT="$HOME/.pyenv"
+
+export PATH=$HOME/.bin:$PYENV_ROOT/bin:$PATH
