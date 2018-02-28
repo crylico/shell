@@ -2,7 +2,7 @@
 
 # Find with Grep
 
-function findg {
+function fg() {
     if [ -z $2 ]; then
 	echo "Correct use fg <dir> <grepString>"
         return 0
@@ -12,20 +12,20 @@ function findg {
 
 
 # Extract things. Thanks to urukrama, Ubuntuforums.org
-extract () {
+function extract() {
      if [ -f $1 ] ; then
          case $1 in
              *.tar.bz2)   tar xjf $1;;
              *.tar.gz)    tar xzf $1;;
              *.bz2)       bunzip2 $1;;
-#            *.rar)       rar x $1;;
+             *.rar)       rar x $1;;
              *.gz)        gunzip $1;;
              *.tar)       tar xf $1;;
              *.tbz2)      tar xjf $1;;
              *.tgz)       tar xzf $1;;
              *.zip)       unzip $1;;
              *.Z)         uncompress $1;;
-#            *.7z)        7z x $1;;
+             *.7z)        7z x $1;;
              *)           echo "'$1' cannot be extracted via extract()" ;;
          esac
      else
@@ -39,45 +39,51 @@ function take() {
 }
 
 # Git
-lclone() {
+function lclone() {
     git clone ssh://git@git.datagno.me:50000/${1}.git
 }
 
-gclone() {
+function radclone() {
+    git clone git@gitlab.com:radlab/${1}.git
+}
+
+function gclone() {
     git clone https://github.com/${1}.git
 }
 
 # iOS
-iosadd() {
+function iosadd() {
     ios devices:add "${1}"=${2}
 }
 
-iosmanage() {
+function iosmanage() {
     ios profiles:manage:devices --type distribution
 }
 
-cy() {
+function cy() {
     ssh -t ios "cycript -p $1"
 }
 
 # Arduino IDE
-arduino-lib() {
+function arduino-lib() {
     rm -rf ~/Documents/Arduino/libraries
     ln -s ${PWD} ~/Documents/Arduino/libraries
 }
 
-load_nvm() {
+function load_nvm() {
     . ~/.nvm/nvm.sh
 }
 
-load_pyenv() {
+function load_pyenv() {
     eval "$(pyenv init -)"
 }
 
-a() {
-    if [ "$#" -ne 1 ]; then
-        atom .
-    else
-        atom $1
-    fi
+function slack_upload() {
+    curl -F file=@$1 -F channels=${SLACK_CHANNEL} -F token=${SLACK_TOKEN} -F initial_comment="$2" https://slack.com/api/files.upload
+}
+
+function reset_webcam() {
+    sudo killall FaceTime
+    sudo killall VDCAssistant
+    open /Applications/FaceTime.app
 }

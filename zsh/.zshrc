@@ -23,6 +23,11 @@ source $ZSH/oh-my-zsh.sh
 MISC=~/.misc/
 
 # Load External BASH
+if [ -f $MISC/.credentials ]; then
+    source $MISC/.credentials
+fi
+
+# Load External BASH
 if [ -f $MISC/.aliases ]; then
     source $MISC/.aliases
 fi

@@ -22,3 +22,6 @@ export DEVKITARM=$DEVKITPRO/devkitARM
 export PYENV_ROOT="$HOME/.pyenv"
 
 export PATH=$HOME/.bin:$PYENV_ROOT/bin:$PATH
+
+export PATH=/usr/local/anaconda3/bin:"$PATH"
+export PATH=/Applications/calibre.app/Contents/console.app/Contents/MacOS:"$PATH"
