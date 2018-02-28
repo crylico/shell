@@ -51,6 +51,10 @@ function gclone() {
     git clone https://github.com/${1}.git
 }
 
+radclone() {
+    git clone ssh://git@gitlab.com/radlab/${1}.git
+}
+
 # iOS
 function iosadd() {
     ios devices:add "${1}"=${2}
