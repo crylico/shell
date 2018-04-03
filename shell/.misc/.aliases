@@ -5,6 +5,8 @@ alias zless=$PAGER
 
 alias emacs='emacs -nw'
 
+alais c="clear"
+
 alias l="ls -laFbh"
 alias cdc="clear;date;cal"
 
@@ -19,10 +21,6 @@ alias po='popd'
 # Basic directory operations
 alias ...='cd ../..'
 alias -- -='cd -'
-
-# Super user
-alias _='sudo'
-alias please='sudo'
 
 alias ga='git add'
 alias gaa='git add -A'
@@ -46,10 +44,6 @@ alias gsp='git stash pop'
 alias gsd='git stash drop'
 alias gt='git tag'
 
-alias gne='geeknote edit --note'
-alias gns='geeknote show'
-alias gnc='geeknote create'
-
 alias mv="mv -i"
 alias cp="cp -i"
 alias rm="rm -i"
@@ -59,7 +53,7 @@ alias o="open ."
 alias o.="open ."
 
 alias cd..="cd .."
-alias cd...="../.."
+alias cd...="cd ../.."
 
 alias tc="tmux new -s"
 alias ta="tmux attach -t"
@@ -71,20 +65,6 @@ alias td="tmux detach"
 alias fuckxcode="rm -rf $HOME/Library/Developer/Xcode/DerivedData"
 alias fl='fastlane'
 alias lane='fastlane'
-
-# shpotify (brew)
-alias spe='spotify pause'
-alias sp='spotify play'
-alias spa='spotify play album'
-alias spr='spotify play artist'
-alias spn='spotify next'
-alias spp='spotify prev'
-alias sps='spotify toggle shuffle'
-alias spre='spotify toggle repeat'
-alias spv='spotify vol'
-
-alias bb='buck build'
-alias bi='buck install'
 
 alias localip="ipconfig getifaddr en0"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
