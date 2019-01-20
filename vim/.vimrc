@@ -3,6 +3,7 @@ set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=/usr/local/opt/fzf
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
@@ -75,8 +76,7 @@ nnoremap <leader>d :Dox<cr>
 
 inoremap jj <esc>
 inoremap kk <esc>
-inoremap <leader>a <C-Space>
-
+      
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>s <C-w>s<C-w>k
 
@@ -86,6 +86,7 @@ nnoremap <leader>c :e ~/.vimrc<cr>
 nnoremap <leader>e :e 
 nnoremap <leader>b :b 
 nnoremap <leader>D :Dash c:\ 
+nnoremap <leader>f :FZF<cr>
 
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
@@ -94,3 +95,5 @@ nnoremap <c-l> <c-w>l
 
 set splitbelow
 set splitright
+
+autocmd filetype crontab setlocal nobackup nowritebackup

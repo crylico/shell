@@ -6,6 +6,7 @@ alias zless=$PAGER
 alias emacs='emacs -nw'
 
 alias c="clear"
+alias cl="clear"
 
 alias l="ls -laFbh"
 alias cdc="clear;date;cal"
