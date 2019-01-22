@@ -56,11 +56,11 @@ alias o.="open ."
 alias cd..="cd .."
 alias cd...="cd ../.."
 
-alias tc="tmux new -s"
-alias ta="tmux attach -t"
-alias tk="tmux kill-session -t"
-alias tl="tmux ls"
-alias td="tmux detach"
+alias tc="TERM=screen-256color-bce tmux new -s"
+alias ta="TERM=screen-256color-bce tmux attach -t"
+alias tk="TERM=screen-256color-bce tmux kill-session -t"
+alias tl="TERM=screen-256color-bce tmux ls"
+alias td="TERM=screen-256color-bce tmux detach"
 
 # iOS - Hey will, this is called commenting
 alias fuckxcode="rm -rf $HOME/Library/Developer/Xcode/DerivedData"
