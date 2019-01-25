@@ -40,19 +40,11 @@ function take() {
 
 # Git
 function lclone() {
-    git clone ssh://git@git.datagno.me:50000/${1}.git
-}
-
-function radclone() {
-    git clone git@gitlab.com:radlab/${1}.git
+    git clone git@gitlab.com:crylico/${1}.git --recursive
 }
 
 function gclone() {
-    git clone https://github.com/${1}.git
-}
-
-radclone() {
-    git clone ssh://git@gitlab.com/radlab/${1}.git
+    git clone https://github.com/${1}.git --recursive
 }
 
 # iOS
@@ -84,16 +76,6 @@ function load_pyenv() {
 
 function load_rbenv() {
     eval "$(rbenv init -)"
-}
-
-function slack_upload() {
-    curl -F file=@$1 -F channels=${SLACK_CHANNEL} -F token=${SLACK_TOKEN} -F initial_comment="$2" https://slack.com/api/files.upload
-}
-
-function reset_webcam() {
-    sudo killall FaceTime
-    sudo killall VDCAssistant
-    open /Applications/FaceTime.app
 }
 
 function kitty_fix() {
