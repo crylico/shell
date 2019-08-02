@@ -1,4 +1,5 @@
 export ZSH=$HOME/.oh-my-zsh
+KEYTIMEOUT=1
 
 ZSH_THEME="dieter"
 

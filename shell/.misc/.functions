@@ -10,6 +10,10 @@ function fg() {
     find $1 -print 2>1 | grep $2
 }
 
+function trash() {
+    mv $@ ~/.Trash/
+}
+
 
 # Extract things. Thanks to urukrama, Ubuntuforums.org
 function extract() {

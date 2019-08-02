@@ -8,7 +8,7 @@ alias emacs='emacs -nw'
 alias c="clear"
 alias cl="clear"
 
-alias l="ls -laFbh"
+alias l="echo current path: $(pwd); echo; ls -laFbh"
 alias cdc="clear;date;cal"
 
 alias grep="grep --color=always"
@@ -22,6 +22,11 @@ alias po='popd'
 # Basic directory operations
 alias ...='cd ../..'
 alias -- -='cd -'
+
+alias ci='lab ci view'
+alias mr='lab mr create origin dev'
+alias mrl='lab mr list'
+alias mrm='lab mr merge'
 
 alias ga='git add'
 alias gaa='git add -A'
